@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import CoinsLanding from "./components/digital-currency/CoinsLanding";
 import Weather from "./components/weather/Weather";
 import Todos from "./components/todo-list/Todos";
+import TodoListContextProvider from "./contexts/todo-list/TodoListContextProvider";
 
 class App extends Component {
   render() {
@@ -11,7 +12,9 @@ class App extends Component {
       <div>
         {/* <CoinsLanding /> */}
         {/* <Weather /> */}
-        <Todos />
+        <TodoListContextProvider>
+          <Todos />
+        </TodoListContextProvider>
       </div>
     );
   }

@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+
+//context
+import { ToloListContext } from "../../contexts/todo-list/TodoListContextProvider";
 
 //components
 import Add from "./Add";
-import TodoListContextProvider from "../../contexts/todo-list/TodoListContextProvider";
+import Todo from "./Todo";
 
 const Todos = () => {
+  const { todos, dispatch } = useContext(ToloListContext);
+  useEffect(() => {
+    dispatch({ type: "FETCH", payload: {} });
+  }, []);
   return (
     <>
-      <TodoListContextProvider>
-        <Add />
-      </TodoListContextProvider>
+      <Add />
+      {todos.map((todo) => (
+        <Todo id={todo.id} info={todo.info} tag={todo.tag} key={todo.id} />
+      ))}
     </>
   );
 };

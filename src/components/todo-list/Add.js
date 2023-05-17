@@ -29,8 +29,13 @@ const Add = () => {
   };
   const addHandler = () => {
     let now = new Date();
-    let payload = { id: now.getTime(), tag: radioValue, info: info };
-    dispatch({ type: "ADD-TODO", payload: payload });
+    if (info.length) {
+      let payload = { id: now.getTime(), tag: radioValue, info: info };
+      dispatch({ type: "ADD-TODO", payload: payload });
+      setInfo("");
+    } else {
+      alert("please add your task before submitting");
+    }
   };
   return (
     <Container>

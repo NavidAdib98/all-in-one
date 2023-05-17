@@ -29,7 +29,7 @@ const Add = () => {
   };
   const addHandler = () => {
     let now = new Date();
-    if (info.length) {
+    if (info.replace(/\s/g, "").length) {
       let payload = { id: now.getTime(), tag: radioValue, info: info };
       dispatch({ type: "ADD-TODO", payload: payload });
       setInfo("");
@@ -42,12 +42,13 @@ const Add = () => {
       <Row className="justify-content-md-center">
         <Col lg="4">
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Form.Label>Add your task hear</Form.Label>
             <Form.Control
+              style={{ textAlign: "left" }}
               as="textarea"
               rows={3}
               onChange={inputHandler}
               value={info}
+              placeholder="Add your task here ..."
             />
           </Form.Group>
         </Col>

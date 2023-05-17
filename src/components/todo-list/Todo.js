@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Badge } from "react-bootstrap";
 
 //context
 import { ToloListContext } from "../../contexts/todo-list/TodoListContextProvider";
@@ -10,16 +10,44 @@ const Todo = ({ id, tag, info }) => {
   const removeHandler = () => {
     dispatch({ type: "REMOVE-ITEM", payload: id });
   };
+  const tags = {
+    1: { name: "Home", variant: "success" },
+    2: { name: "Office", variant: "info" },
+    3: { name: "School", variant: "danger" },
+  };
 
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Body>
-        <Card.Title>title</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">{time}</Card.Subtitle>
-        <Card.Text>{info}</Card.Text>
-        <Button onClick={removeHandler} variant="danger">
-          X
-        </Button>{" "}
+    <Card style={{ width: "18rem", margin: "10px" }}>
+      <Card.Body style={{ textAlign: "left" }}>
+        <Card.Subtitle
+          style={{ textAlign: "left" }}
+          className="mb-2 text-muted"
+        >
+          {time}
+        </Card.Subtitle>
+        <Card.Text
+          style={{
+            textAlign: "left",
+            height: "70px",
+            overflowY: "scroll",
+            backgroundColor: "#c6c4c4",
+            borderRadius: "5px",
+          }}
+        >
+          {info}
+        </Card.Text>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <Badge pill bg={tags[tag].variant}>
+            {tags[tag].name}
+          </Badge>
+          <Button
+            onClick={removeHandler}
+            variant="outline-secondary"
+            style={{ padding: "0px 2px", fontSize: "13px" }}
+          >
+            remove
+          </Button>
+        </div>
       </Card.Body>
     </Card>
   );

@@ -1,0 +1,76 @@
+.container {
+  background-image: url("../../assets/cold_img.webp");
+  background-size: cover;
+  height: auto;
+}
+.main {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.544),
+    rgba(0, 0, 0, 0.947)
+  );
+  height: 100vh;
+  overflow-y: scroll;
+}
+.input {
+  width: 300px;
+  margin-top: 50px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  height: 20px;
+  padding: 5px;
+  background-color: #f6f6f6;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: white;
+  background: white;
+  box-shadow: rgba(74, 74, 74, 0.24) 0px 3px 8px;
+}
+
+.locationBox .location {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+.locationBox .date {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+}
+
+.WeatherBox {
+  text-align: center;
+}
+.WeatherBox .temp {
+  display: inline-block;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 15px 25px;
+  color: #fff;
+  font-size: 102px;
+  font-weight: 900;
+  text-align: center;
+  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.WeatherBox .weather {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+}

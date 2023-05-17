@@ -15,7 +15,7 @@ import {
 } from "react-bootstrap";
 
 const Add = () => {
-  const [todos, dispatch] = useContext(ToloListContext);
+  const { todos, dispatch } = useContext(ToloListContext);
   const [radioValue, setRadioValue] = useState("1");
   const [info, setInfo] = useState("");
   const radios = [
@@ -26,6 +26,11 @@ const Add = () => {
   const inputHandler = (event) => {
     const info = event.target.value;
     setInfo(info);
+  };
+  const addHandler = () => {
+    let now = new Date();
+    let payload = { id: now.getTime(), tag: radioValue, info: info };
+    dispatch({ type: "ADD-TODO", payload: payload });
   };
   return (
     <Container>
@@ -66,7 +71,9 @@ const Add = () => {
               </ToggleButton>
             ))}
           </ButtonGroup>
-          <Button variant="primary">+</Button>{" "}
+          <Button variant="primary" onClick={addHandler}>
+            +
+          </Button>{" "}
         </Col>
       </Row>
     </Container>

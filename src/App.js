@@ -9,8 +9,7 @@ class App extends Component {
     return (
       <div>
         {/* <CoinsLanding /> */}
-
-        <Weather />
+        {/* <Weather /> */}
       </div>
     );
   }

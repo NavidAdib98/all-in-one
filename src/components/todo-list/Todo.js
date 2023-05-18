@@ -12,7 +12,7 @@ const Todo = ({ id, tag, info }) => {
   };
   const tags = {
     1: { name: "normal", variant: "success" },
-    2: { name: "important", variant: "info" },
+    2: { name: "important", variant: "warning" },
     3: { name: "forced", variant: "danger" },
   };
 

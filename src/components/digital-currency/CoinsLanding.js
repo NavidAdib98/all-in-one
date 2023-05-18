@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-
-//API
-import { getCoin } from "../../services/digital-currency/api";
+import axios from "axios";
 
 //Components
 import Loader from "../Loader";
@@ -14,11 +12,15 @@ const CoinsLanding = () => {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
   useEffect(() => {
-    const fetchApi = async () => {
-      const data = await getCoin();
-      setCoins(data);
-    };
-    fetchApi();
+    const BASE_URL =
+      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=false";
+    axios
+      .get(BASE_URL)
+      .then((res) => res.data)
+      .then((data) => setCoins(data))
+      .catch((error) =>
+        alert("unfortunately api is not responding. use vpn to change your IP")
+      );
   }, []);
 
   const searchHandler = (event) => {

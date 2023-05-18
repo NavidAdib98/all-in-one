@@ -11,9 +11,9 @@ const Todo = ({ id, tag, info }) => {
     dispatch({ type: "REMOVE-ITEM", payload: id });
   };
   const tags = {
-    1: { name: "Home", variant: "success" },
-    2: { name: "Office", variant: "info" },
-    3: { name: "School", variant: "danger" },
+    1: { name: "normal", variant: "success" },
+    2: { name: "important", variant: "info" },
+    3: { name: "forced", variant: "danger" },
   };
 
   return (

@@ -19,9 +19,9 @@ const Add = () => {
   const [radioValue, setRadioValue] = useState("1");
   const [info, setInfo] = useState("");
   const radios = [
-    { name: "Home", value: "1" },
-    { name: "Office", value: "2" },
-    { name: "School", value: "3" },
+    { name: "normal", value: "1" },
+    { name: "important", value: "2" },
+    { name: "forced", value: "3" },
   ];
   const inputHandler = (event) => {
     const info = event.target.value;
@@ -40,10 +40,10 @@ const Add = () => {
   return (
     <Container>
       <Row className="justify-content-md-center">
-        <Col lg="4">
+        <Col lg="6">
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Control
-              style={{ textAlign: "left" }}
+              style={{ textAlign: "left", marginTop: "10px" }}
               as="textarea"
               rows={3}
               onChange={inputHandler}
@@ -54,10 +54,11 @@ const Add = () => {
         </Col>
       </Row>
       <Row className="justify-content-md-center">
-        <Col lg="4">
+        <Col>
           <ButtonGroup>
             {radios.map((radio, idx) => (
               <ToggleButton
+                style={{ margin: "2px" }}
                 key={idx}
                 id={`radio-${idx}`}
                 type="radio"
@@ -65,7 +66,7 @@ const Add = () => {
                   idx == 0
                     ? "outline-success"
                     : idx == 1
-                    ? "outline-info"
+                    ? "outline-warning"
                     : "outline-danger"
                 }
                 name="radio"
@@ -77,9 +78,13 @@ const Add = () => {
               </ToggleButton>
             ))}
           </ButtonGroup>
-          <Button variant="primary" onClick={addHandler}>
-            +
-          </Button>{" "}
+          <Button
+            variant="secondary"
+            onClick={addHandler}
+            style={{ margin: "10px 25px" }}
+          >
+            Add your todo hear
+          </Button>
         </Col>
       </Row>
     </Container>

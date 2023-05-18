@@ -1,9 +1,10 @@
 .coinContainer {
-  margin: 50px auto;
+  margin: 30px auto;
   border: 1px solid silver;
   border-radius: 10px;
-  width: fit-content;
+  /* width: fit-content; */
   background-color: #f6f6f6;
+  justify-content: center;
 }
 
 .input {
@@ -11,10 +12,11 @@
   margin-top: 50px;
   border: 1px solid silver;
   border-radius: 5px;
-  height: 20px;
+  height: 40px;
   padding: 5px;
   background-color: #f6f6f6;
   transition: all 0.2s ease;
+  margin-bottom: 10px;
 }
 
 .input:focus {

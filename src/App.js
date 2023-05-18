@@ -7,7 +7,7 @@ import Weather from "./components/weather/Weather";
 import Todos from "./components/todo-list/Todos";
 import TodoListContextProvider from "./contexts/todo-list/TodoListContextProvider";
 import MyNavbar from "./components/MyNavbar";
-import HomePage from "./components/home-page/Homepage";
+import Homepage from "./components/HomePage/Homepage";
 
 class App extends Component {
   render() {
@@ -16,7 +16,7 @@ class App extends Component {
         <MyNavbar />
 
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Homepage />} />
           <Route path="/weather" element={<Weather />} />
           <Route
             path="/todo"

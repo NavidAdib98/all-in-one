@@ -7,36 +7,19 @@ const MyNavbar = () => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
-          <Navbar.Brand>Navid Adib</Navbar.Brand>
-        </Link>
+        <Navbar.Brand as={Link} to="/">
+          Navid Adib
+        </Navbar.Brand>
+
         <Nav className="me-auto">
-          <Nav.Link>
-            <Link
-              style={{ textDecoration: "none", color: "inherit" }}
-              to="/weather"
-            >
-              Weather
-            </Link>
+          <Nav.Link as={Link} to="/weather">
+            Weather
           </Nav.Link>
-
-          <Nav.Link>
-            <Link
-              style={{ textDecoration: "none", color: "inherit" }}
-              to="/todo"
-            >
-              Todos
-            </Link>
+          <Nav.Link as={Link} to="/coins">
+            Coins
           </Nav.Link>
-
-          <Nav.Link>
-            {" "}
-            <Link
-              style={{ textDecoration: "none", color: "inherit" }}
-              to="/coins"
-            >
-              Coins
-            </Link>
+          <Nav.Link as={Link} to="/todo">
+            Todos
           </Nav.Link>
         </Nav>
       </Container>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Row, Col, Container } from "react-bootstrap";
 
 //Components
 import Loader from "../Loader";
@@ -30,7 +31,7 @@ const CoinsLanding = () => {
     coin.name.toLowerCase().includes(search)
   );
   return (
-    <>
+    <Container>
       <input
         className={styles.input}
         type="text"
@@ -38,25 +39,27 @@ const CoinsLanding = () => {
         value={search}
         onChange={searchHandler}
       />
-
+      <br />
       {!coins.length ? (
         <Loader />
       ) : (
-        <div className={styles.coinContainer}>
-          {searchCoins.map((coin) => (
-            <Coin
-              key={coin.id}
-              name={coin.name}
-              image={coin.image}
-              symbol={coin.symbol}
-              price={coin.current_price}
-              marketCap={coin.market_cap}
-              priceChange={coin.price_change_percentage_24h}
-            />
-          ))}
-        </div>
+        <Row className={styles.coinContainer}>
+          <Col md="auto">
+            {searchCoins.map((coin) => (
+              <Coin
+                key={coin.id}
+                name={coin.name}
+                image={coin.image}
+                symbol={coin.symbol}
+                price={coin.current_price}
+                marketCap={coin.market_cap}
+                priceChange={coin.price_change_percentage_24h}
+              />
+            ))}
+          </Col>
+        </Row>
       )}
-    </>
+    </Container>
   );
 };
 

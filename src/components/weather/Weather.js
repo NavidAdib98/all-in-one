@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 //styles:
 import styles from "./Weather.module.css";
@@ -44,6 +44,15 @@ const Weather = () => {
 
     return `${day} ${date} ${month} ${year}`;
   };
+  useEffect(() => {
+    const first_weather = {
+      main: { temp: "0" },
+      name: "city",
+      sys: { country: "country" },
+      weather: [{ main: "sunny", icon: "01d" }],
+    };
+    setWeather(first_weather);
+  }, []);
   const search = (event) => {
     if (event.key === "Enter") {
       axios
@@ -69,7 +78,7 @@ const Weather = () => {
           value={query}
           onKeyPress={search}
           type="text"
-          placeholder="Search"
+          placeholder="City..."
           className={styles.input}
         />
         {notFound && <p>city is not found...</p>}

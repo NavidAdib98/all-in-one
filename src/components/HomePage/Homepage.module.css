@@ -1,0 +1,25 @@
+.pill {
+  background-color: #761313;
+  color: #fff;
+  font-family: fantasy;
+  font-size: 1.5rem;
+  font-weight: 100;
+  padding: 2px 5px;
+  border-radius: 10px;
+  display: inline;
+  margin: 0px 5px;
+}
+.contact {
+  display: inline;
+  font-size: 1.5rem;
+  margin: 0px 10px;
+}
+td {
+  text-align: left;
+}
+.app:hover {
+  background-color: rgb(231, 230, 230);
+}
+.app {
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}

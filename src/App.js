@@ -8,6 +8,7 @@ import Todos from "./components/todo-list/Todos";
 import TodoListContextProvider from "./contexts/todo-list/TodoListContextProvider";
 import MyNavbar from "./components/MyNavbar";
 import Homepage from "./components/HomePage/Homepage";
+import Footer from "./components/Footer";
 
 class App extends Component {
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
           <Route path="/coins" element={<CoinsLanding />} />
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
+        <Footer />
       </div>
     );
   }
